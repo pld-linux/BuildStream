@@ -1,14 +1,16 @@
 Summary:	Framework for modelling build pipelines in YAML
 Summary(pl.UTF-8):	Szkielet do modelowania potoków budowania w YAML-u
 Name:		BuildStream
-Version:	1.4.3
+Version:	1.6.0
 Release:	1
 License:	LGPL v2+
 Group:		Development/Tools
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/BuildStream/1.4/%{name}-%{version}.tar.xz
-# Source0-md5:	73931e8cebd1fe593f3238f769bcaee3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/BuildStream/1.6/%{name}-%{version}.tar.xz
+# Source0-md5:	41b4a86a604c127b5860688ecd2ecc1e
 URL:		https://wiki.gnome.org/Projects/BuildStream
 BuildRequires:	python3 >= 1:3.5
+BuildRequires:	python3-pytest-runner
+BuildRequires:	python3-setuptools
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
