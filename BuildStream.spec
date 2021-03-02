@@ -2,7 +2,7 @@ Summary:	Framework for modelling build pipelines in YAML
 Summary(pl.UTF-8):	Szkielet do modelowania potoków budowania w YAML-u
 Name:		BuildStream
 Version:	1.6.1
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Development/Tools
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/BuildStream/1.6/%{name}-%{version}.tar.xz
