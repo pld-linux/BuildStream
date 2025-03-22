@@ -1,20 +1,19 @@
 Summary:	Framework for modelling build pipelines in YAML
 Summary(pl.UTF-8):	Szkielet do modelowania potoków budowania w YAML-u
 Name:		BuildStream
-Version:	1.6.1
-Release:	6
+Version:	2.4.0
+Release:	1
 License:	LGPL v2+
 Group:		Development/Tools
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/BuildStream/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	7afab1908e815ebbd7e4ef1404bf2818
-URL:		https://wiki.gnome.org/Projects/BuildStream
+Source0:	https://github.com/apache/buildstream/archive/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	dcc3eb668e5674ef770ccf23a21bcc7b
+URL:		https://buildstream.build/
 BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-pytest-runner
 BuildRequires:	python3-setuptools
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,7 +44,7 @@ Bash completion for bst commands.
 Bashowe uzupełnianie parametrów poleceń bst.
 
 %prep
-%setup -q
+%setup -q -n buildstream-%{version}
 
 %build
 %py3_build
@@ -60,11 +59,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc MAINTAINERS NEWS README.rst
+%doc NEWS README.rst
 %attr(755,root,root) %{_bindir}/bst
-%attr(755,root,root) %{_bindir}/bst-artifact-server
-%{py3_sitescriptdir}/buildstream
-%{py3_sitescriptdir}/BuildStream-%{version}-py*.egg-info
+%{py3_sitedir}/buildstream
+%{py3_sitedir}/BuildStream-%{version}-py*.egg-info
 %{_mandir}/man1/bst.1*
 %{_mandir}/man1/bst-*.1*
 
